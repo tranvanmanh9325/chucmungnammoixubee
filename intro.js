@@ -45,10 +45,10 @@ closeSlider3.addEventListener('click', function(){
 
 
 // ------audio------------
-var buttonSong = document.querySelector('.button')
-var mySong = document.getElementById("song")
-buttonSong.onclick= function(){
-    if(mySong.paused){
-        mySong.play()
-    }
-}
+ var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+  if (!isChrome){
+      $('#iframeAudio').remove()
+  }
+  else {
+      $('#playAudio').remove() // just to make sure that it will not have 2x audio in the background 
+  }
